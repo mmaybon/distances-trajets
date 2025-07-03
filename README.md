@@ -1,17 +1,28 @@
-# distances-trajets
+# Distances & Géocodage CSV 🚗
 
-Ce dépôt contient un notebook Jupyter/Colab/Binder pour :
-- Géocoder une liste d’adresses (API Adresse data.gouv.fr)
-- Calculer les distances routières (OSRM demo)
+Ce projet permet d'enrichir un fichier CSV contenant des adresses en France avec :
+- Les coordonnées GPS (via [api-adresse.data.gouv.fr](https://adresse.data.gouv.fr/api))
+- La distance en voiture entre les adresses (via [OSRM](http://project-osrm.org/))
 
-Les utilisateurs n’ont qu’à :
-1. Cliquer sur le lien Binder ci-dessous  
-2. Uploader leur CSV  
-3. Exécuter les cellules  
-4. Télécharger le résultat
+## ✅ Exemple d'utilisation
 
-Lien :  https://mybinder.org/v2/gh/mmaybon/distances-trajets/HEAD?filepath=geocode_et_route.ipynb
+1. Prépare un fichier CSV avec les colonnes :
+   - `Adresse départ`
+   - `Adresse destination`
 
-## Contenu du dépôt
+2. Lance ce notebook ici :
 
-- `geocode_et_route.ipynb` : notebook principal  
+[![Ouvrir dans Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mmaybon/distances-trajets/blob/main/distances_trajets.ipynb)
+
+3. Upload ton fichier CSV
+4. Récupère un fichier `.xlsx` enrichi avec :
+   - Latitude / Longitude de départ et destination
+   - Distance en km
+
+## 📦 Dépendances
+
+Aucune installation requise si utilisé via Google Colab.
+Sinon :
+
+```bash
+pip install pandas openpyxl
